@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :require_permission, only: [:edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -11,6 +12,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.new
   end
 
   # GET /posts/new
@@ -71,6 +73,12 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :year, :description, :picture)
+    end
+    
+    def require_permission
+        if current_user !=@Post.user
+          redirect_to root_path, notice: 'You don\'t have a permission for this post'
+        end
     end
 end

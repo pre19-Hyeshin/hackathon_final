@@ -10,7 +10,12 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.file_field :picture %>
+  </div>
+  
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
