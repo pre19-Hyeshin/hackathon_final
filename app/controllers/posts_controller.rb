@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+   
   end
 
   # GET /posts/new
@@ -32,7 +33,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post, notice: '등록이 완료되었습니다.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
