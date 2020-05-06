@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :require_permission, only: [:edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
@@ -12,7 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.new
+   
   end
 
   # GET /posts/new
@@ -28,11 +27,13 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    
     @post.user = current_user
+    
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post, notice: '등록이 완료되었습니다.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -73,12 +74,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body, :year, :description, :picture)
-    end
-    
-    def require_permission
-        if current_user !=@Post.user
-          redirect_to root_path, notice: 'You don\'t have a permission for this post'
-        end
+      params.require(:post).permit(:title, :body)
     end
 end
