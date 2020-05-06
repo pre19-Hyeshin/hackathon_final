@@ -1,11 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<% if @post.picture.attached? %>
-  <p>
-    <%= image_tag @post.picture %>
-  </p>
-<% end %>
-
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
@@ -18,18 +12,14 @@
 
 <p>
   <strong>Like:</strong>
-  <%= @Post.liked_users.count %>
+  <%= @post.liked_users.count%>
 </p>
 
-<% if Post_liked_by_user?(@Post, current_user) %>
-  <p>
-    <%= link_to "❤️", "/Posts/#{@Post.id}/likes", method: :post %>
-  </p>
-<% else %>
-  <p>
-    <%= link_to "🤍", "/Posts/#{@Post.id}/likes", method: :post %>
-  </p>
-<% end %>
+<p>
+  <%= link_to "좋아요", "/posts/#{@post.id}/likes", method: :post %>
+</p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
+
+<%= link_to 'Edit', edit_post_path(@post) %>
 <%= link_to 'Back', posts_path %>
+
