@@ -67,6 +67,9 @@ class PostsController < ApplicationController
   
   def recipe
   end 
+  
+  def sell
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -26,7 +26,7 @@
           구입하기
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">1번 물품</a>
+          <a class="dropdown-item" href=<%= sell_path %>>버섯</a>
           <a class="dropdown-item" href="#">2번 물품</a>
           <a class="dropdown-item" href="#">3번 물품</a>
           <div class="dropdown-divider"></div>
@@ -51,18 +51,105 @@
 </nav>
 
 <body>
+  <br>
+
 <div class="container">
   <h2>판매 상품</h2>
   <hr>
 
   <div class="media">
     <div class="media-left">
-      <img src="mushroom1.jpg" class="media-object" style="width:60px">
+      <%= image_tag("mushroom1.jpg", class: "card-img-top", style:"width:150px; height:150px") %>
     </div>
-    <div class="media-body">
-      <h4 class="media-heading">Left-aligned</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <div class="container">
+    <div class="row">
+      <hr>
+      <div class="col">
+        농가이름
+      </div>
+      <div class="col">
+        가격
+      </div>
+      <div class="col">
+        배송소요시간
+      </div>
     </div>
+    <div class="row">
+      <div class="col">
+        민규버섯
+      </div>
+      <div class="col">
+        1,500원
+      </div>
+      <div class="col">
+        3일
+      </div>
+    </div>
+  </div>
+    </div>
+    <hr>
+  
+  <div class="media">
+    <div class="media-left">
+      <%= image_tag("mushroom2.jpg", class: "card-img-top", style:"width:150px; height:150px") %>
+    </div>
+      <div class="container">
+        <div class="row">
+          <hr>
+          <div class="col">
+            농가이름
+          </div>
+          <div class="col">
+            가격
+          </div>
+          <div class="col">
+            배송소요시간
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            민규버섯
+          </div>
+          <div class="col">
+            2,000원
+          </div>
+          <div class="col">
+            3일
+          </div>
+        </div>
+      </div>
+  </div>
+  <hr>
+  
+  <div class="media">
+    <div class="media-left">
+      <%= image_tag("mushroom3.jpg", class: "card-img-top", style:"width:150px; height:150px") %>
+    </div>
+      <div class="container">
+        <div class="row">
+          <hr>
+          <div class="col">
+            농가이름
+          </div>
+          <div class="col">
+            가격
+          </div>
+          <div class="col">
+            배송소요시간
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            민규버섯
+          </div>
+          <div class="col">
+            2,000원
+          </div>
+          <div class="col">
+            3일
+          </div>
+        </div>
+      </div>
   </div>
   <hr>
  
