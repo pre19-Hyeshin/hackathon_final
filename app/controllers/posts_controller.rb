@@ -67,6 +67,9 @@ class PostsController < ApplicationController
   
   def recipe
   end 
+  
+  def farm
+  end 
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -78,9 +81,6 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :body)
     end
-    
-    def farm
-    end
-    
+  
     
 end
