@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+.card-img-top{width:300px; height:300px;
+    
+}
