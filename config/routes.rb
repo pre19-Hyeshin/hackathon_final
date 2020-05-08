@@ -9,11 +9,7 @@ end
   get '/farm' => 'posts#farm'
   post 'posts/:post_id/likes' => 'likes#create'
   root 'posts#index'
-  
-<<<<<<< HEAD
-  
-  
-=======
+
   get '/recipe' => 'posts#recipe'
->>>>>>> 26d93a9286614ad62a753f66b5b245733778de71
+
 end
