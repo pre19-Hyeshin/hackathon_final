@@ -15,5 +15,6 @@ end
   
   get '/recipe' => 'posts#recipe'
   get '/sell' => 'posts#sell'
+  get '/index' => 'posts#index'
 
 end
