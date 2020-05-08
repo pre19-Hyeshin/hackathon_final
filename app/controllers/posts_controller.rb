@@ -67,6 +67,9 @@ class PostsController < ApplicationController
   
   def recipe
   end 
+  
+  def sell
+  end
 
   def search
     if params[:search].blank?
