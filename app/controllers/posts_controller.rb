@@ -68,6 +68,8 @@ class PostsController < ApplicationController
   def recipe
   end 
   
+
+
   def farm
   end 
 
