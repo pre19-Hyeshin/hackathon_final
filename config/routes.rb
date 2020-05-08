@@ -10,4 +10,5 @@ end
   root 'posts#index'
   
   get '/recipe' => 'posts#recipe'
+  get '/search' => "posts#search"
 end

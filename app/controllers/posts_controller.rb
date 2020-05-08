@@ -68,6 +68,15 @@ class PostsController < ApplicationController
   def recipe
   end 
 
+  def search
+    if params[:search].blank?
+      redirect_to(search_path, alert: "Empty field!") and return
+    else
+      @parameter = params[:search].downcase
+      @results = Posts.all.where("lower(name) LIKE :search", search: @parameter)
+    end
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -79,3 +88,4 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :body)
     end
 end
+  
