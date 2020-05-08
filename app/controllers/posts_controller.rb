@@ -68,9 +68,15 @@ class PostsController < ApplicationController
   def recipe
   end 
   
+<<<<<<< HEAD
   def farm
   end 
+=======
+  def sell
+  end
+>>>>>>> 1953736c4467c320b81d3897270f369c88835485
 
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -84,3 +90,4 @@ class PostsController < ApplicationController
   
     
 end
+  
